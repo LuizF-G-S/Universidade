@@ -22,6 +22,11 @@ t0 = st.number_input("Tempo inicial", value=0.0, format="%.5f")
 tn = st.number_input("Tempo final", value=100.0, format="%.5f")
 nb_points = 50
 
+#Definir titulo
+
+titulo = st.text_input("Título do gráfico: ")
+predadores = st.text_input('Predador: ')
+presas = st.text_input('presa: ')
 # Parâmetros do sistema (para cada tempo t entre o intervalo [t0, tn] com espaçamento de 500 pontos)
 t = np.linspace(t0, tn, 500)
 
@@ -72,9 +77,9 @@ for X0 in initial_conditions:
 
 # Layout
 fig.update_layout(
-    title='Plano de fases do modelo Presa-Predador',
-    xaxis_title='Número de Presas',
-    yaxis_title='Número de Predadores',
+    title=f'{titulo}',
+    xaxis_title=f'Número de {presas}',
+    yaxis_title=f'Número de {predadores}',
     legend_title='Legenda',
     showlegend=True
 )
