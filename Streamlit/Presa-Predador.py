@@ -14,10 +14,10 @@ def dX_dt(X, t, a, b, c, d):
 st.title("Plano de fases do modelo de Presa-Predador")
 
 # Definir os parâmetros
-a = st.number_input("Taxa de crescimento das presas na ausência de predadores", value=1.0, format="%.5f")
-b = st.number_input("Taxa de mortalidade das presas dada a presença de predadores", value=0.1, format="%.5f")
-c = st.number_input("Taxa de crescimento dos predadores dada a caça de presas", value=0.1, format="%.5f")
-d = st.number_input("Taxa de mortalidade dos predadores dada a ausência de presas", value=1.0, format="%.5f")
+a = st.number_input("Taxa de crescimento das presas na ausência de predadores", value= 0.4301, format="%.5f")
+b = st.number_input("Taxa de mortalidade das presas dada a presença de predadores", value=0.0777, format="%.5f")
+c = st.number_input("Taxa de crescimento dos predadores dada a caça de presas", value=1.2, format="%.5f")
+d = st.number_input("Taxa de mortalidade dos predadores dada a ausência de presas", value=0.0289, format="%.5f")
 t0 = st.number_input("Tempo inicial", value=0.0, format="%.5f")
 tn = st.number_input("Tempo final", value=100.0, format="%.5f")
 nb_points = 50
@@ -78,8 +78,8 @@ for X0 in initial_conditions:
 # Layout
 fig.update_layout(
     title=f'{titulo}',
-    xaxis_title=f'Número de {presas}',
-    yaxis_title=f'Número de {predadores}',
+    xaxis_title=f'População de {presas}',
+    yaxis_title=f'População de {predadores}',
     legend_title='Legenda',
     showlegend=True
 )
