@@ -25,8 +25,8 @@ nb_points = 50
 #Definir titulo
 
 titulo = st.text_input("Título do gráfico: ")
-predadores = st.text_input('eixo horizontal: ')
-presas = st.text_input('eixo vertical: ')
+eixo_horizontal = st.text_input('eixo horizontal: ')
+eixo_vertical = st.text_input('eixo vertical: ')
 # Parâmetros do sistema (para cada tempo t entre o intervalo [t0, tn] com espaçamento de 500 pontos)
 t = np.linspace(t0, tn, 500)
 
@@ -78,8 +78,8 @@ for X0 in initial_conditions:
 # Layout
 fig.update_layout(
     title=f'{titulo}',
-    xaxis_title=f'{presas}',
-    yaxis_title=f'{predadores}',
+    xaxis_title=f'{eixo_vertical}',
+    yaxis_title=f'{eixo_horizontal}',
     legend_title='Legenda',
     showlegend=True
 )
